@@ -1,7 +1,6 @@
 import { appendCopyChatButton } from "./CopyConversation/appendCopyChatButton"
-import { watchCopyChatButton } from "./CopyConversation/watchCopyChatButton"
+import { observeURL } from "./utils/observeURL"
 
-setTimeout(() => {
+observeURL(() => {
 	appendCopyChatButton()
-	watchCopyChatButton()
-}, 3000)
+})

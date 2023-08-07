@@ -9,6 +9,10 @@ export const appendCopyChatButton = async () => {
 		return
 	}
 
+	if (document.querySelector(SELECTOR_CHATS_TO_API_BUTTON)) {
+		return
+	}
+
 	const newChatButton = document.querySelector(SELECTOR_NEW_CHAT_BUTTON)
 
 	newChatButton.querySelector(`a`).insertAdjacentHTML(`afterend`, favoriteChatsButtonComponent)

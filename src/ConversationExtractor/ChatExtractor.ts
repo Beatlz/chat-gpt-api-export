@@ -33,7 +33,7 @@ export class ChatExtractor {
 	}
 
 	isNewChat(): boolean {
-		return !this.chat.length
+		return window.location.pathname.split(`/`).length === 2
 	}
 
 	async copyChat() {
