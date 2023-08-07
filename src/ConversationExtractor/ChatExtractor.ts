@@ -5,6 +5,10 @@ import { SELECTOR_CHAT_MESSAGES } from "~/CopyConversation/chat.types"
 export class ChatExtractor {
 	private _chat: SimpleChatMessage[] = []
 
+	constructor() {
+		this.craftChat()
+	}
+
 	get chat(): SimpleChatMessage[] {
 		return this._chat
 	}
@@ -12,8 +16,11 @@ export class ChatExtractor {
 		this._chat = chat
 	}
 
-	async craftChat(): Promise<void> {
+	craftChat(): void {
 		const messageDivs = document.querySelectorAll(SELECTOR_CHAT_MESSAGES)
+
+		console.log(messageDivs)
+
 		const indexes = Object.keys(messageDivs)
 		const chat = indexes.map((_, index) => {
 			const div = messageDivs[index] as HTMLDivElement
@@ -32,7 +39,8 @@ export class ChatExtractor {
 	}
 
 	async copyChat() {
-		await this.craftChat()
+		this.craftChat()
+		
 		await navigator.clipboard.writeText(JSON.stringify(this.chat, null, 2))
 	}
 }

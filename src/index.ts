@@ -1,5 +1,7 @@
 import { appendCopyChatButton } from "./CopyConversation/appendCopyChatButton"
 import { watchCopyChatButton } from "./CopyConversation/watchCopyChatButton"
 
-appendCopyChatButton()
-watchCopyChatButton()
+setTimeout(() => {
+	appendCopyChatButton()
+	watchCopyChatButton()
+}, 3000)

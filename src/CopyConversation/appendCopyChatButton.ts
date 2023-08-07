@@ -5,8 +5,6 @@ import { favoriteChatsButtonComponent } from "./favoriteChatsButtonComponent"
 export const appendCopyChatButton = async () => {
 	const chatExtractor = new ChatExtractor()
 	
-	await chatExtractor.craftChat()
-	
 	if (chatExtractor.isNewChat()) {
 		return
 	}
@@ -19,7 +17,7 @@ export const appendCopyChatButton = async () => {
 
 	openFavoriteChatsButtonElement.addEventListener(`click`, async () => {
 		try {
-			await chatExtractor.craftChat()
+			chatExtractor.craftChat()
 
 			if (chatExtractor.isNewChat()) {
 				alert(`Nothing to copy!`)
