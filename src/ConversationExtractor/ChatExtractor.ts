@@ -19,8 +19,6 @@ export class ChatExtractor {
 	craftChat(): void {
 		const messageDivs = document.querySelectorAll(SELECTOR_CHAT_MESSAGES)
 
-		console.log(messageDivs)
-
 		const indexes = Object.keys(messageDivs)
 		const chat = indexes.map((_, index) => {
 			const div = messageDivs[index] as HTMLDivElement
